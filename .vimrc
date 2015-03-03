@@ -1,3 +1,4 @@
+" Aron Dennen's vimrc
 " Make vim awesome
 
 " Tabs and indenting 
@@ -17,7 +18,7 @@ set showmatch  " Show matching parenthesis
 set incsearch  " Search while typing
 
 " Statusline
-set laststatus=2
+set laststatus=2 " always show status line
 set statusline=%t%m%r%h%w\ [Format\ %{&ff}]\ [Type\ %Y]\ [%l,%v][%p%%]\ %{strftime(\"%m/%d/%y\ -\ %H:%M\")}
 
 " Compile commands
@@ -43,8 +44,8 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " GUI options
-set guioptions-=T
-set guioptions-=t
+set guioptions-=T " remove toolbar
+set guioptions-=t " remove tear off menus
 set guifont=DejaVu\ Sans\ Mono\ 8
 set sessionoptions+=resize,winpos
 
@@ -108,7 +109,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimfiler.vim'
 
-" Taglist
+" Tagbar
 Plugin 'Tagbar'
 
 call vundle#end()            " required
@@ -116,11 +117,10 @@ filetype plugin indent on    " required
 " --------
 
 
-" VimFiler default appearance
+" VimFiler settings
 "autocmd VimEnter * VimFiler -split -simple -winwidth=30 -no-quit
 
 nmap <c-e> :VimFiler -split -simple -toggle -winwidth=30 -no-quit<CR>
-
 
 " Make VimFiler behave like NERDTree. e.g. Expand folder on double click, edit on double click
 " It would be nice if this could be reduced further
@@ -137,8 +137,7 @@ let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = '▾'
 let g:vimfiler_tree_closed_icon = '▷'
 
-
-" Tagbar shortcut
+" Tagbar settings
 let g:tagbar_left = 1 " Show on the left side
 let g:tagbar_sort = 0 " Set the default sort to unsorted
 let g:tagbar_compact = 1 " Compact mode
