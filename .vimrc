@@ -144,3 +144,7 @@ let g:tagbar_sort = 0 " Set the default sort to unsorted
 let g:tagbar_compact = 1 " Compact mode
 autocmd VimEnter * nested :call tagbar#autoopen(1) " Open on startup
 nnoremap <silent> <F8> :TagbarToggle<CR>
+
+" formatoptions must be set after compatible is set
+" Disable automatic comment continuations
+autocmd FileType * setlocal formatoptions-=r formatoptions-=o
